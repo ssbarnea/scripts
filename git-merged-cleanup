@@ -21,10 +21,10 @@ if ! git log -1 &>/dev/null; then
 fi
 
 grep_changeid() {
-    sed -nr 's/ *Change-Id: ([A-Za-z0-9])/\1/p'
+    sed -nE 's/ *Change-Id: ([A-Za-z0-9])/\1/p'
 }
 strip_brmark() {
-    sed -r 's/[* ] //'
+    sed -E 's/[* ] //'
 }
 contains() {
     local e
